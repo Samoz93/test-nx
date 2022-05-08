@@ -1,0 +1,46 @@
+{
+  "database": {
+    "rules": "apps/firebasehooks/database.rules.json"
+  },
+  "firestore": {
+    "rules": "apps/firebasehooks/firestore.rules",
+    "indexes": "apps/firebasehooks/firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "apps/firebasehooks/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "apps/firebasehooks/storage.rules"
+  },
+  "functions": {
+    "predeploy": [
+      "npx nx build firebasehooks --with-deps",
+      "npx nx lint firebasehooks"
+    ],
+    "source": "dist/apps/firebasehooks"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "auth": {
+      "port": "9099"
+    },
+    "pubsub": {
+      "port": "8085"
+    }
+  }
+}

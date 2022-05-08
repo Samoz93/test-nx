@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "testing": "fir-hello-worl",
+    "default": "fir-hello-worl"
+  },
+  "targets": {}
+}

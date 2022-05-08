@@ -1,0 +1,27 @@
+{
+  "sourceRoot": "apps/helloworld-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/helloworld-e2e/cypress.json",
+        "devServerTarget": "helloworld:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "helloworld:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/helloworld-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["helloworld"]
+}

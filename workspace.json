@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "firebase": "libs/firebase",
+    "helloworld": "apps/helloworld",
+    "helloworld-e2e": "apps/helloworld-e2e"
+  }
+}
