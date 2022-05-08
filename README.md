@@ -1,7 +1,7 @@
 
 
-# TestNx
+# Firestore demo with NX
 
 
-# to run the project 
+# Run the project 
 ```npm run serve```
